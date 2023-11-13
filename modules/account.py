@@ -19,10 +19,21 @@ class Account:
     def deposit(self, amount):
         if amount > 0:
             self.balance += amount
-        return f"balance raised to {self.balance}"
+            print(f'balance raised to {self.balance}')
+        print('No change')
 
     def withdrawal(self, amount):
         if self.balance - amount < 0:
             raise ValueError('Not enough amount')
         self.balance -= amount
-        return f"balance decreased to {self.balance}"
+        print(f'balance decreased to {self.balance}')
+
+
+class SavingsAccount(Account):
+    def __init__(self, account_id, balance, customer, interest_rate):
+        super().__init__(self, account_id, balance, customer)
+        self.interest_rate = interest_rate
+
+    def deposit(self, amount):
+        interest = self.balance + amount * self.interest_rate
+        return f"balance with interest rate is {interest}"

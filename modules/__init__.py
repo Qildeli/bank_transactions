@@ -1,6 +1,3 @@
-from customer import Customer
-from account import Account
-from savings_account import SavingsAccount
-from transaction import Transaction
-
-__all__ = ['Customer', 'Account', 'SavingsAccount', 'Transaction']
+from .customer import Customer
+from .account import Account, SavingsAccount
+from .transaction import Transaction, process_transaction

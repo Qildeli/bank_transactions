@@ -10,3 +10,9 @@ class Transaction:
         self.source_account = source_account
         self.destination_account = destination_account
         self.timestamp = datetime.datetime
+
+
+def process_transaction(transaction: Transaction):
+    if transaction.source_account.balance >= transaction.amount:
+        transaction.source_account.withdrawal(transaction.amount)
+        transaction.destination_account.deposit(transaction.amount)

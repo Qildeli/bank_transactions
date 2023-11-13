@@ -10,7 +10,3 @@ class TestAccount(unittest.TestCase):
 
     def test_account(self):
         self.assertEqual(self.account.balance, 100)
-
-
-if __name__ == '__main__':
-    unittest.main()
